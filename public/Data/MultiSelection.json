@@ -1,0 +1,9 @@
+{
+  "productAvailable": [
+    { "id": 1, "color": "red", "img": "images/red.png" },
+    { "id": 2, "color": "mint", "img": "images/mint.png" },
+    { "id": 3, "color": "blue", "img": "images/blue.png" },
+    { "id": 4, "color": "red2", "img": "images/red.png" },
+    { "id": 5, "color": "mint2", "img": "images/mint.png" }
+  ]
+}
