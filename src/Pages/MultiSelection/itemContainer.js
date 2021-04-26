@@ -1,23 +1,20 @@
 import "./itemContainer.scss";
 import { useState } from "react";
 
-const ItemContainer = ({ id, color, img }) => {
-  const [isSelected, setIsSelected] = useState(false);
-  const [selectedItems, setSelectedItems] = useState("");
+const ItemContainer = ({ color, img, checkItem }) => {
+  const [checked, setChecked] = useState(false);
 
-  const checkAnswer = (id) => {
-    const selectedID = [id];
-    // setSelectedItems(...selectedItems, ...selectedID);
-    console.log(setSelectedItems(...selectedItems, ...selectedID));
-    setIsSelected(!isSelected);
+  const checkAnswer = () => {
+    setChecked(!checked);
+    checkItem();
   };
 
   return (
     <>
       <div
-        style={{ backgroundColor: isSelected ? "pink" : "" }}
+        style={{ backgroundColor: checked ? "pink" : "" }}
         className="itemBox"
-        onClick={() => checkAnswer(id)}
+        onClick={checkAnswer}
       >
         <div>
           <img src={img} alt="color" />
