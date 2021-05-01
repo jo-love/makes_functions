@@ -1,20 +1,23 @@
-import { useState } from "react";
 import React from "react";
 
-function Search({ inputValue, setInputValue }) {
-  // const [imputValue, setInputValue] = useState("");
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-    console.log(e.target.value, "target");
-    console.log(inputValue, "input");
+function Search({ searchMovie, inputValue, setInputValue }) {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    searchMovie();
+    setInputValue("");
   };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         className="input_search"
         type="text"
         placeholder="영화를 검색하세요..."
-        onChange={handleChange}
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+        }}
       />
     </form>
   );
